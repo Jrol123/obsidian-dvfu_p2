@@ -1,0 +1,31 @@
+Activity Name             SIM_DistType           SIM_Max                SIM_Min                SIM_Mode               SIME_Travel Time       SIMR_Qty               SIMR_ResName           SIMR_ResSG             SIM_BTravelTime        SIM_AtbOut             SIM_SendCopies         SIM_RankRule           SIM_ConsAtbSG          SIM_MatchOnSG          SIM_Save Criterion     
+________________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  
+
+Review  Orders            Min Mode Max           16                     12                     14                     1                      1                      Review Order Clerk     Individual Resource                                                                                                                                                                     
+
+Review Ticket             Min Mode Max           8                      6                      7                                             1                      Review Ticket Clerk    Individual Resource                                                                                                                                                                     
+
+Review  Supplier Invoice  Min Mode Max           7                      5                      6                                             1                      Review Supplier Clerk  Individual Resource                                                                                                                                                                     
+
+Invoice Customer          Min Mode Max           1                      .6                     .8                     1                      1                      Invoicer                                      1                      No                     Yes                                                                                                                
+
+Manual Data Entry         Min Mode Max           20                     16                     18                     1                      1                      Order System           Individual Resource                                                                                                                                                                     
+
+Data  Entry               Min Mode Max           9                      7                      8                      1                      1                      Data Entry Operator    Individual Resource                                                                                                                                                                     
+
+Check Supplier  and Cust  Min Mode Max           11                     9                      10                                            1                      Review Supplier Clerk  Individual Resource                                                                                                                                                                     
+Inv                                                                                                                                                                                                                                                                                                                                                                                
+
+Process Ticket            Min Mode Max           9                      6                      7                                             1                      Ticket Processor       Individual Resource                                                                                                                                                                     
+
+Print or  Mail Invoice    Min Mode Max           9                      7                      8                                             1                      Printer                Individual Resource                                                                         First In First Out     Previously Specified   Internal Entity        Last Entity            
+                                                                                                                                                                                                                                                                                                                                     Number                                        
+
+Deliver Product           Min Mode Max           20                     16                     18                     2                      1                      Worker                 Individual Resource                                                                                                                                                                     
+
+Collection                Min Mode Max           15                     11                     13                                            1                      Receivable Clerk       Individual Resource                                                                                                                                                                     
+
+Pick Product  from Bin    Min Mode Max           10                     6                      8                      1                      1                      Picker                 Individual Resource                                                                                                                                                                     
+
+Generate Pick Ticket      Min Mode Max           17                     12                     13                     1                      1                      Purchaser              Individual Resource                                                                         First In First Out                                                                          
+

@@ -1,0 +1,128 @@
+:Base BPsyncER.HLP
+1 Synchronizing BPwin and ERwin Models in ModelMart
+2 Synchronizing BPwin and ERwin Models in ModelMart=Synchronizing_BPwin_and_ERwin_Models_in_ModelMart>Main
+1 Synchronizing a BPwin Model with an ERwin Model
+2 Synchronizing a BPwin Model with an ERwin Model=Synchronizing_a_BPwin_Model_with_an_ERwin_Model>Main
+2 Rules for Synchronizing BPwin Activities with ERwin Subject Areas=Rules_for_Synchronizing_BPwin_Activities_with_ERwin_Subject_Areas>Main
+2 Rules for Synchronizing BPwin Entities with ERwin Entities=Rules_for_Synchronizing_BPwin_Entities_with_ERwin_Entities>Main
+2 Rules for Synchronizing BPwin Attributes with ERwin Attributes=Rules_for_Synchronizing_BPwin_Attributes_with_ERwin_Attributes>Main
+1 Synchronizing an ERwin Model with a BPwin Model
+2 Synchronizing an ERwin Model with a BPwin Model=Synchronizing_an_ERwin_Model_with_a_BPwin_Model>Main
+2 Rules for Synchronizing ERwin Entities with BPwin Entities=Rules_for_Synchronizing_ERwin_Entities_with_BPwin_Entities>Main
+2 Rules for Synchronizing ERwin Attributes with BPwin Attributes=Rules_for_Synchronizing_ERwin_Attributes_with_BPwin_Attributes>Main
+1 Starting the ModelMart Synchronizer
+2 Starting the ModelMart Synchronizer=Starting_the_ModelMart_Synchronizer>Main
+2 To start the ModelMart Synchronizer=To_start_the_ModelMart_Synchronizer>proc
+1 Using the ModelMart Synchronizer
+2 Using the ModelMart Synchronizer=Using_the_ModelMart_Synchronizer>Main
+2 To connect to ModelMart=To_connect_to_ModelMart>proc
+2 To set the direction of synchronization=To_set_the_direction_of_synchronization>proc
+2 To select the BPwin and ERwin models to synchronize=To_select_the_BPwin_and_ERwin_models_to_synchronize>proc
+2 To select the method of synchronization=To_select_the_method_of_synchronization>proc
+2 Reviewing ModelMart Changes
+3 Reviewing the Model Changes Required for the Synchronization=Reviewing_the_Model_Changes_Required_for_the_Synchronization>Main
+3 Filtering a Change List
+4 Filtering a Change List=Filtering_a_Change_List>Main
+3 Canceling Changes in a Change List
+4 Canceling Changes in a Change List=Canceling_Changes_in_a_Change_List>Main
+4 To cancel changes in a change list=To_cancel_changes_in_a_change_list>proc
+3 Finding Items in a Change List
+4 Finding Items in a Change List=Finding_Items_in_a_Change_List>Main
+4 Specifying Search Criteria for a Change Item Component=Specifying_Search_Criteria_for_a_Change_Item_Component>Main
+4 To find an item in a change list=To_find_an_item_in_a_change_list>proc
+4 Viewing the Currently Selected Search Criteria=Viewing_the_Currently_Selected_Search_Criteria>Main
+4 To view the currently selected search criteria=To_view_the_currently_selected_search_criteria>proc
+3 Viewing Information about a Change Statement in a Change List
+4 Viewing Information about a Change Statement in a Change List=Viewing_Information_about_a_Change_in_a_Change_List>Main
+4 To view information about a change statement in a change list=To_view_information_about_a_change_in_a_change_list>proc
+3 Saving a Local Copy of a Model that Includes Synchronization Changes
+4 Saving a Local Copy of a Model that Includes Synchronization Changes=Saving_a_Local_Copy_of_a_Model_that_Includes_Synchronization_Changes>Main
+4 To save a local copy of a model that includes synchronization changes=To_save_a_local_copy_of_a_model_that_includes_synchronization_changes>proc
+3 Creating a ModelMart Change Control Manager Report
+4 Creating a ModelMart Change Control Manager Report=Creating_a_ModelMart_Change_Control_Manager_Report>Main
+4 To create a ModelMart Change Control Manager report=To_create_a_ModelMart_Change_Control_Manager_report>proc
+4 ModelMart Change Control Manager Report Content=ModelMart_Change_Control_Manager_Report_Content>Main
+4 Sample ModelMart Change Control Manager Report=Sample_ModelMart_Change_Control_Manager_Report>table
+2 Working with the Report Browser
+3 Report Browser Features
+4 The Report Browser Workplace=The_Report_Browser_Workplace>Main
+4 Summary of Menu Options and Toolbar Controls=Summary_of_Report_Browser_Menu_Options_and_Toolbar_Controls>Main
+4 Tree Control=Tree_Control>Main
+4 Shortcut Menus for Tree Control Objects=Shortcut_Menus_for_Tree_Control_Objects>Main
+4 Navigating and Managing the Tree Control
+5 Navigating and Managing the Tree Control=Navigating_and_Managing_the_Tree_Control>Main
+5 To display all report folders=To_display_all_report_folders>proc
+5 To collapse all open folders in the tree control=To_collapse_all_open_folders_in_the_tree_control>proc
+5 To make the selected folder the root node=To_make_the_selected_folder_the_root_node>proc
+5 To move the root node up one level=To_move_the_root_node_up_one_level>proc
+5 To create a new report folder=To_create_a_new_report_folder>proc
+5 To delete an item from the tree control=To_delete_an_item_from_the_tree_control>proc
+4 Displaying a History of Result Sets
+5 Displaying a History of Result Sets=Displaying_a_History_of_Result_Sets>Main
+5 To display a history of generated result sets=To_display_a_history_of_generated_result_sets>proc
+4 Customizing a Result Set View
+5 Customizing a Result Set View=Customizing_a_Result_Set_View>Main
+5 Specifying Column Options for a Result Set
+6 Specifying Column Options for a Result Set=Specifying_Column_Options_for_a_Result_Set>Main
+6 To select the columns to include in the result set=To_select_the_columns_to_include_in_the_result_set>proc
+6 To change the order of columns in a result set=To_change_a_column_heading_in_a_result_set>proc
+6 To change the appearance of one or more columns in a result set=To_change_the_appearance_of_one_or_more_columns_in_a_result_set>proc
+6 To change a column heading in a result set=To_change_a_column_heading_in_a_result_set>proc
+5 Specifying Column Sort Order and Sort Type
+6 Specifying Column Sort Order and Sort Type=Specifying_Column_Options_for_a_Result_Set>Main
+6 To sort a result set on one or more columns=To_sort_a_result_set_on_one_or_more_columns>proc
+5 Assigning an Icon to a Result Set Value
+6 Assigning an Icon to a Result Set Value=Assigning_an_Icon_to_a_Result_Set_Value>Main
+6 To assign an icon to a result set value=To_assign_an_icon_to_a_result_set_value>proc
+6 To remove an icon from a result set value=To_remove_an_icon_from_a_result_set_value
+5 Finding Items in a Result Set
+6 Finding Items in a Result Set=Exporting_a_Result_Set>Main
+6 To find result set rows that match the specified search criteria=To_find_result_set_rows_that_match_the_specified_search_criteria>proc
+6 To find a change of value in a result set column=To_find_a_change_of_value_in_a_result_set_column>proc
+5 Hiding Rows That Do Not Match the Search Criteria
+6 Hiding Rows That Do Not Match the Search Criteria=Hiding_Rows_That_Do_Not_Match_the_Search_Criteria>Main
+6 To hide result set rows that do not match serach criteria=To_hide_result_set_rows_that_do_not_match_search_criteria>proc
+5 Saving a Report View
+6 Saving a Report View=Saving_a_Report_View>Main
+6 To save a report view=To_save_a_report_view>proc
+4 Printing a Result Set
+5 Printing a Result Set=Printing_a_Result_Set>Main
+5 To print a result set=To_print_a_result_set>proc
+5 To set print and page layout options=To_set_print_and_page_layout_options>proc
+5 Setting Options When Printing a Results Set
+6 Setting Options When Printing a Result Set=Setting_Options_when_Printing_a_Result_Set>Main
+6 Specifying the Page Setup for a Result Set Printout=Specifying_the_Page_Setup_for_a_Result_Set_Printout>Main
+6 Setting the Layout Characteristics for a Result Set Printout=Setting_the_Layout_Characteristics_for_a_Result_Set_Printout>Main
+6 Setting the Font Characteristics for a Result Set Printout=Setting_the_Font_Characteristics_for_a_Result_Set_Printout>Main
+6 Changing Default Headers, Footers, Page Numbers, and Titles=Changing_Default_Headers_Footers_Page_Numbers_and_Titles>Main
+4 Previewing a Result Set
+5 Previewing a Result Set=Previewing_a_Result_Set>Main
+5 To preview a result set before printing=To_preview_a_result_set_before_printing>proc
+4 Exporting a Result Set
+5 Exporting a Result Set=Exporting_a_Result_Set>Main
+5 To export a result set=To_export_a_result_set>proc
+4 Exiting the Report Browser
+5 Exiting the Report Browser=Exiting_the_Report_Browser>Main
+5 To exit the Report Browser=To_exit_the_Report_Browser>proc
+3 Using the Report Browser with ModelMart
+4 Using the Report Browser with ModelMart=Using_the_Report_Browser_with_ModelMart>Main
+4 ModelMart Nodes in the Report Browser Tree Control=ModelMart_Nodes_in_the_Report_Browser_Tree_Control>Main
+4 To view ModelMart reports by category=To_view_ModelMart_reports_by_category>proc
+4 To view reports by ModelMart object=To_view_reports_by_ModelMart_object>proc
+4 Summary of Tree Control Symbols for ModelMart Objects=Summary_of_Tree_Control_Symbols_for_ModelMart_Objects>Main
+4 Generating a ModelMart Report
+5 Generating a ModelMart Report=Generating_a_ModelMart_Report>Main
+5 To generate a ModelMart report=To_generate_a_ModelMart_report>proc
+4 Using a Result Set Row to Generate a Report
+5 Using a Result Set Row to Generate a Report=Using_a_Result_Set_Row_to_Generate_a_Report>Main
+5 To generate a report using a result set row=To_generate_a_report_using_a_result_set_row>proc
+5 To generate a report from the reports available list=To_generate_a_report_from_the_reports_available_list>proc
+5 To display a previously linked result set=To_display_a_previously_linked_result_set>proc
+4 Creating a ModelMart Library Manager Report
+5 Creating a ModelMart Library Manager Report=Creating_a_ModelMart_Library_Manager_Report>Main
+5 To create a ModelMart Library Manager Report=To_create_a_ModelMart_Library_Manager_Report>proc
+5 ModelMart Library Manager Report Content=ModelMart_Library_Manager_Report_Content
+5 Sample ModelMart Library Manager Report=Sample_ModelMart_Library_Manager_Report>Main
+4 Saving the Result Set for a ModelMart Report
+5 Saving the Result Set for a ModelMart Report=Saving_the_Result_Set_for_a_ModelMart_Report>Main
+5 To save a result set for the next ModelMart session=To_save_a_result_set_for_the_next_ModelMart_session>proc

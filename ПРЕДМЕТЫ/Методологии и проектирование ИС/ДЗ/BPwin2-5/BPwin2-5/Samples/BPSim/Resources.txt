@@ -1,0 +1,7 @@
+Activity Name             RES_Efficiency         RES_MaxOrders          RES_ResAvail           RES_ResCost            RES_Resource           RES_ResUtil            
+________________________  _____________________  _____________________  _____________________  _____________________  _____________________  _____________________  
+
+Order System              1.0                    1                      Always available       No                     Order System           Yes                    
+
+Picker                    1.0                    2                      Always Available       No                     Picker                 Yes                    
+
