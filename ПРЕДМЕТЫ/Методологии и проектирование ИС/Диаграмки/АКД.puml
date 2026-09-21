@@ -1,0 +1,89 @@
+' @startuml Архитектурно-контекстная диаграмма V1
+' !include AdditionalFiles/C4_Context.puml.txt
+' !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' ' uncomment the following line and comment the first to use locally
+' ' !include C4_Context.puml
+
+' left to right direction
+
+' ' skinparam linetype ortho
+' ' LAYOUT_WITH_LEGEND()
+
+' ' ОБЪЕКТЫ
+
+' ' Пользователи
+' Person(sci, "Учёный секретарь", "Имеет такие же права, как и администратор")
+' Person(regular, "Научный сотрудник")
+' Person(dep, "Руководитель подразделения")
+
+' ' Основные системы
+
+' Boundary(main_system, "Основная система"){
+'     System(main_functions, "Основной функционал", "Добавление научных результатов, просмотр отчётов и их генерация")
+'     System(internal_functions, "Внутренние системы", "Список грантов, настроек КБПР и др.")
+'     System(repeated_functions, "Механизм повторяющихся задач", "Настройка автоматического выполнения задач раз в промежуток времени")
+' }
+
+' ' Внешние системы
+' System_Ext(external, "Файлы шаблонов отчётов", "Файлы, на основе которых будут создаваться отчёты")
+' System_Ext(AI, "Система ИИ", "Развёрнутая локально")
+' ' System_Ext(OuterAPI, "Внешние системы хранения журналов", "Elibrary и др.")
+
+' ' ОТНОШЕНИЯ
+
+' Rel(sci, external, "Правка шаблонов")
+
+' Rel(sci, main_system, "Правка настроек, выставление коэффициентов")
+
+' Rel(sci, main_functions, "Добавление научных результатов, просмотр всех научных результатов, генерация всех видов отчётов")
+' Rel(dep, main_functions,"Добавление научных результатов, просмотр научных результатов сотрудников своего подразделения, генерация всех видов отчётов")
+' Rel(regular, main_functions, "Добавление научных результатов, просмотр научных результатов, где он указан как один из авторов, генерация индивидуальных отчётов")
+
+' BiRel_D(main_functions, internal_functions, "Являются частью одной системы")
+' Rel_U(repeated_functions, main_functions, "Автоматический вызов функций основной системы")
+' Rel(main_functions, external, "Получение шаблонов для генерации отчётов")
+' Rel(main_functions, AI, "Чат-бот, конвертация публикационной информации в параметры системы, получение статистики по пользователю или подразделению")
+' ' Rel(internal_functions, OuterAPI, "Автоматическое обновление информации о журналах раз в промежуток времени")
+
+' @enduml
+@startuml Архитектурно-контекстная диаграмма
+!include AdditionalFiles/C4_Context.puml.txt
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+left to right direction
+
+' skinparam linetype ortho
+' LAYOUT_WITH_LEGEND()
+
+' ОБЪЕКТЫ
+
+' Пользователи
+Person(sci, "Учёный секретарь", "Имеет такие же права, как и администратор")
+Person(regular, "Научный сотрудник")
+Person(dep, "Руководитель подразделения")
+
+' Основные системы
+
+System(main_functions, "Система автоматизации учёта", "Добавление научных результатов, просмотр отчётов и их генерация, настройка коэффициентов КБПР и журналов")
+
+
+' Внешние системы
+System_Ext(filesystem, "Файловая система", "Содержит файлы шаблонов отчётов, на основе которых будут создаваться отчёты")
+System_Ext(rangesites, "Сайты с ранжировкой", "Сайты, на которых лежат списки журналов в определённой наукометрической базе")
+
+' ОТНОШЕНИЯ
+
+Rel(sci, filesystem, "Правка шаблонов")
+
+Rel(sci, main_functions, "Правка настроек, выставление коэффициентов")
+
+Rel(sci, main_functions, "Добавление научных результатов, просмотр всех научных результатов, генерация всех видов отчётов")
+Rel(dep, main_functions,"Добавление научных результатов, просмотр научных результатов сотрудников своего подразделения, генерация всех видов отчётов")
+Rel(regular, main_functions, "Добавление научных результатов, просмотр научных результатов, где он указан как один из авторов, генерация индивидуальных отчётов")
+
+Rel(main_functions, filesystem, "Получение шаблонов для генерации отчётов")
+Rel(main_functions, rangesites, "Получение данных о журналах в автоматическом режиме с возможностью ручного обновления")
+
+@enduml

@@ -1,0 +1,125 @@
+@startuml Диаграмма потоков данных
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/angular.puml
+!include DEVICONS/java.puml
+!include DEVICONS/msql_server.puml
+
+' Акторы
+actor "Научный сотрудник" as scientist order 1 #blue
+actor "Руководитель подразделения" as dephead order 2 #orange
+actor "Учёный секретарь" as scisec order 3 #red
+actor "Администратор" as admin order 4 #purple
+
+' Основные сущности
+entity "Веб-приложение\n(Django)" as webapp order 91
+database "База данных\n(PostgreSQL)" as db order 99
+
+' Внешние системы
+entity "Сервис расписания вызова функций\n(cron)" as timemanager order 92 #lightpink
+entity "Сервис ИИ\n(Ollama/LangChain)" as ai order 95 #lightblue
+entity "Файловое хранилище\nшаблонов (.docx)" as templates order 96 #lightgreen
+
+' =============================================
+' Группа: Добавление научного результата
+' =============================================
+group Добавление научного результата
+autonumber 1
+scientist -[#blue]> webapp : данные публикации
+dephead -[#orange]> webapp : данные публикации/гранта
+webapp -> db : данные публикации/гранта
+end
+
+' =============================================
+' Группа: Модерация
+' =============================================
+group Модерация
+autonumber 1
+webapp -[#blue]> scientist : данные записей, где указан автором
+scientist -[#blue]> webapp : обновленные данные записей
+note over scientist
+В работах, где сотрудник не является их создателем, он может редактировать только свои роль и аффилиацию
+end note
+webapp -[#orange]> dephead : данные записей по своему подразделению
+dephead -[#orange]> webapp : обновленные данные записей
+webapp -[#red]> scisec : данные всех записей
+scisec -[#red]> webapp : обновленные данные записей
+webapp -> db : обновленные данные записей
+end
+
+' =============================================
+' Группа: Формирование отчётов
+' =============================================
+group Формирование отчётов
+autonumber 1
+scientist -[#blue]> webapp : запрос индивидуального отчёта или КБПР
+dephead -[#orange]> webapp : запрос отчёта по подразделению
+db -> webapp : данные для отчёта\n(публикации, КБПР)
+templates -[#lightgreen]> webapp : шаблон .docx
+webapp -[#blue]> scientist : готовый отчёт DOCX
+webapp -[#orange]> dephead : готовый отчёт DOCX
+end
+
+' =============================================
+' Группа: Использование ИИ-помощника
+' =============================================
+group Использование ИИ-помощника для автозаполнения формы
+autonumber 1
+scientist -[#blue]> webapp : библиографические данные
+webapp -[#blue]> ai : библиографические данные
+ai -[#lightblue]> webapp : структурированные поля
+webapp -[#blue]> scientist : данные для формы
+end
+
+' =============================================
+' Группа: Использование ИИ-помощника
+' =============================================
+group Использование ИИ-помощника для получения статистики и навигации в системе
+autonumber 1
+scientist -[#blue]> ai : текстовый запрос
+ai -> ai : распознавание запроса и его параметров\n(временной промежуток статистики, название объекта, на который надо перейти и т. д.)
+db -->ai : информация о внесённых объектах для статистики
+ai -[#lightblue]> scientist : текстовый ответ
+ai --> webapp : переадресация пользователя на нужный объект для помощи с навигацией
+end
+
+' =============================================
+' Группа: Настройка системы
+' =============================================
+group Настройка системы
+autonumber 1
+admin -[#purple]> webapp : измененные коэффициенты КБПР
+scisec -[#red]> webapp : измененные коэффициенты КБПР
+webapp -> db : новые настройки
+end
+group Настройка шаблонов
+autonumber 1
+admin -[#purple]> templates : новые файлы шаблонов отчётов\n(.docx)
+scisec -[#red]> templates : новые файлы шаблонов отчётов\n(.docx)
+end
+
+' =============================================
+' Группа: Настройка системы расписаний
+' =============================================
+group Настройка и работа системы расписаний
+autonumber 1
+admin -[#purple]> timemanager : расписание
+timemanager ->timemanager: ожидание нужного времени
+timemanager -[#lightpink]> webapp : вызов функций по-расписанию\n(автополучение журналов из 'белого списка')
+end
+
+' ' =============================================
+' ' Группа: Просмотр статистики (Чтение)
+' ' =============================================
+' group Просмотр статистики
+' autonumber 1
+' scientist -[#blue]> webapp : запрос личных показателей
+' dephead -[#orange]> webapp : запрос статистики подразделения
+' scisec -[#red]> webapp : запрос общей статистики
+' webapp -> db : чтение агрегированных данных\n(КБПР, количество публикаций)
+' webapp --> scientist : отображение
+' webapp --> dephead : отображение
+' webapp --> scisec : отображение
+' end
+
+@enduml

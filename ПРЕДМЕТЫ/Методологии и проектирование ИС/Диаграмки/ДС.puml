@@ -1,0 +1,100 @@
+@startuml Диаграмма состояний
+top to bottom direction
+hide empty description
+skinparam state {
+  BackgroundColor #FEFECE
+  BorderColor #gray
+}
+
+[*] --> aichat
+[*] --> pub
+[*] --> report
+[*] --> kbpr
+[*] --> tasktime
+
+state "ИИ-помощник" as aichat {
+  ' state "Открытие окна помощника" as openaichat <<entryPoint>>
+  state "Запрос статистики" as getstat{
+    getstat: Запросить статистику по выбранному сотруднику / подразделению / всему институту\nза период времени
+    state "Проверка" as statcheck{
+      statcheck: Проверка, есть ли у сотрудника возможность, смотреть на статистику\nвыбранного сотрудника / подразделения / всего института
+    }
+    state "Недостаточно прав" as fail
+    state "Прав достаточно" as success
+    [*] --> statcheck
+
+    statcheck --> fail
+    fail --> [*]: Сообщение о недостатке прав
+
+    statcheck --> success
+    success --> [*]: Вывод статистики в сообщении
+
+  }
+  state "Помощь с навигацией" as helpnav{
+    helpnav: Открытие страницы с нужной категорией научных результатов
+    [*] --> pub
+  }
+  [*] -> getstat
+  [*] --> helpnav
+}
+
+state "Научный результат" as pub {
+  ' state "Открытие нужной категории" as pubentry <<entryPoint>>
+  [*] --> pubcreate
+  [*] --> pubedit
+  state "Создать новую запись" as pubcreate{
+    state "Заполнение нужных полей" as pubcreatefill
+    state "Указание соавторов\n(если есть возможность для этого типа научных результатов)" as pubcreatecoauthors
+    [*] --> pubcreatefill
+    pubcreatefill --> pubcreatecoauthors
+    pubcreatecoauthors --> [*]
+  }
+  state "Редактировать существующую запись" as pubedit{
+    [*] --> pubeditcoauthor
+    [*] --[#red]> pubeditauthor: Является автором записи /\nруководителем подразделения автора
+    state "Редактировать свои поля" as pubeditcoauthor {
+      pubeditcoauthor: Аффилиация и роль
+    }
+    state "Редактировать поля записи" as pubeditauthor
+    pubeditauthor --> [*]
+    pubeditcoauthor --> [*]
+  }
+}
+
+state "Отчёт по сотруднику / подразделению" as report {
+  state "Создание" as created {
+    created: Выбор главных результатов,\nзаполнение актуальности и т. д.
+  }
+  [*] --> created
+  created --> Принят : утверждение руководителем
+  created --> Отклонён : отклонение руководителем
+  Отклонён --> created : исправление ошибок
+  Принят --> [*]
+  Отклонён --> [*]
+}
+
+state "КБПР" as kbpr {
+  state "Заполнение коэффициентов" as fillcoef
+  state "Создание / редактирование" as kbprcreate
+  [*] --[#red]> fillcoef: может делать только\nучёный секретарь / администратор
+  fillcoef --> [*]
+
+  [*] --> kbprcreate
+  kbprcreate --> [*]
+}
+
+state "Выполнение задач по расписанию" as tasktime {
+  tasktime: Автоматическое выполнение тех или иных задач
+  state "Получение журналов из белого списка\nи их внесение в систему" as tasktimewhitejournal
+  [*] --> tasktimewhitejournal: Каждый квартал
+  tasktimewhitejournal --> [*]
+}
+
+' state "Отчёт по подразделению" as depreport {
+'   [*] --> Создан : создание руководителем / \nуч. секретарём
+'   Создан --> Создан : исправление\n(при необходимости изменить данные отчета)
+'   Создан --> Удалён : удаление (руководитель / уч. секретарь)
+'   Удалён --> [*]
+' }
+
+@enduml
