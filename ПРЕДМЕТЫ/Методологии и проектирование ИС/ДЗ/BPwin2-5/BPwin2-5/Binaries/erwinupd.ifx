@@ -1,5 +1,0 @@
-UPDATE erw_Master
-  SET Version = %3,
-     Creation_Date = CURRENT
- WHERE Repository_Name = '%2';
-{go}
