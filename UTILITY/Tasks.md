@@ -8,22 +8,18 @@ edited_seconds: 20
 
 ## Done
 
-- [ ] **МПИС**
-	Лаба 1
-	#учёба
-- [ ] **МММППР**
-	Лаба 1
-	#учёба
+- [ ] Лаба 1
+	#МПИС
+- [ ] Лаба 1
+	#МММППР
 
 
 ## Beign checked
 
-- [ ] **Английский**
-	ДЗ 1
-	#учёба
-- [ ] **АПС**
-	Эссе 1
-	#учёба
+- [ ] ДЗ 1
+	#Английский
+- [ ] Эссе 1
+	#АПС
 
 
 ## In progress
@@ -32,16 +28,16 @@ edited_seconds: 20
 
 ## TODO
 
-- [ ] **МПИС**
-	Лаба 2
-	#учёба
-- [ ] МММППР
-	Лаба 2
-	#учёба
+- [ ] Лаба 2
+	#МПИС
+- [ ] Лаба 2
+	#МММППР
 
 
 ## URGENT
 
+- [ ] Эссе 1
+	#АПКИС
 
 
 ## Архивировать
@@ -52,6 +48,6 @@ edited_seconds: 20
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false],"move-tags":true,"tag-sort":[{"tag":"#стажировка"},{"tag":"#курсач"},{"tag":"#учёба"}],"inline-metadata-position":"metadata-table","metadata-keys":[{"metadataKey":"tags","label":"Тэги","shouldHideLabel":false,"containsMarkdown":false},{"metadataKey":"Материал","label":"Материал","shouldHideLabel":false,"containsMarkdown":true},{"metadataKey":"```dataview```","label":"","shouldHideLabel":false,"containsMarkdown":true}],"new-note-folder":"Задачи","tag-colors":[{"tagKey":"#стажировка","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(83, 255, 0, 0.31)"},{"tagKey":"#учёба","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(0, 140, 255, 0.43)"},{"tagKey":"#курсач","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(255, 0, 0, 1)"},{"tagKey":"#цк","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(85, 155, 167, 1)"},{"tagKey":"#личное","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(210, 0, 255, 0.61)"}],"move-task-metadata":false,"full-list-lane-width":false,"tag-action":"kanban"}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,true],"move-tags":true,"tag-sort":[{"tag":"#МММППР"},{"tag":"#МПИС"},{"tag":"#Английский"},{"tag":"#АПС"},{"tag":"#Курсач"}],"inline-metadata-position":"metadata-table","metadata-keys":[{"metadataKey":"tags","label":"Тэги","shouldHideLabel":false,"containsMarkdown":false},{"metadataKey":"Материал","label":"Материал","shouldHideLabel":false,"containsMarkdown":true},{"metadataKey":"```dataview```","label":"","shouldHideLabel":false,"containsMarkdown":true}],"new-note-folder":"Задачи","tag-colors":[{"tagKey":"#Английский","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(83, 255, 0, 0.31)"},{"tagKey":"#МПИС","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(0, 140, 255, 0.43)"},{"tagKey":"#Курсач","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(255, 0, 0, 1)"},{"tagKey":"#АПС","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(85, 155, 167, 1)"},{"tagKey":"#МММППР","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(210, 0, 255, 0.61)"},{"tagKey":"#АПКИС","color":"","backgroundColor":"rgba(255, 11, 141, 0.28)"}],"move-task-metadata":false,"full-list-lane-width":false,"tag-action":"kanban"}
 ```
 %%
