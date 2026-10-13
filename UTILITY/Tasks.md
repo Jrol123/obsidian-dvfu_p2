@@ -26,6 +26,8 @@ edited_seconds: 20
 
 ## In progress
 
+- [ ] Лаба 2
+	#МПИС
 
 
 ## TODO
@@ -58,8 +60,6 @@ edited_seconds: 20
 
 ## URGENT
 
-- [ ] Лаба 2
-	#МПИС
 
 
 ## Архивировать
