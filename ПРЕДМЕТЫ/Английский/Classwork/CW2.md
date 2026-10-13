@@ -1,6 +1,6 @@
 ---
-updated_at: 2026-10-13T18:16:57.672+10:00
-edited_seconds: 180
+updated_at: 2026-10-13T18:33:51.827+10:00
+edited_seconds: 390
 ---
 # ТЗ
 Cl/w: p. 20-26 ex. 8,9, 10,11
@@ -39,4 +39,28 @@ Cl/w: p. 20-26 ex. 8,9, 10,11
 	To prove a claim in science, the presenter must:
 	- write a paper presenting their specific **findings**;
 	- defend their **thesis** against all challenges before a **panel of judges** (i.e. peer reviewers or a scientific committee);
-	- provide sufficient evidence and arguments to support their position.
+	- provide sufficient evidence and arguments to support their position.]
+
+### Fact
+
+| **English**     | Russian                                                                            |
+| --------------- | ---------------------------------------------------------------------------------- |
+| fact            | факт (действительное положение вещей, то, что произошло на самом деле)             |
+| verifiability   | проверяемость, верифицируемость (возможность доказать или подтвердить на практике) |
+| reference works | справочные издания, справочники, справочная литература                             |
+
+1. The Russian Department of Agriculture recommends that adults consume three to four cups of vegetables per day.
+	- **Fact**
+	- Это объективное утверждение. Мы можем открыть официальные документы или сайт Министерства сельского хозяйства и проверить, существует ли такая рекомендация на самом деле.
+2. Playing team sports is the better way to lose weight.
+	- **Opinion**
+	- Слово _better_ (лучший) выражает субъективную оценку.
+3. Research shows that a diet low in salt helps people to lower their blood pressure.
+	- **Fact**
+	- Утверждение ссылается на результаты научных исследований. Наличие этих исследований и их конкретные выводы можно объективно проверить и верифицировать.
+4. Home-cooked meal tastes better than meal in restaurants.
+	-  **Opinion**
+	- Фраза _tastes better_ (вкуснее) описывает личные вкусовые предпочтения.
+5. Research indicates that young people who ate meals with their parents did well academically.
+	- **Fact**
+	- Как и в пункте 3, здесь констатируется результат проведенного исследования (корреляция между совместными приемами пищи и успеваемостью). Этот результат можно проверить, обратившись к первоисточнику (научной статье).
