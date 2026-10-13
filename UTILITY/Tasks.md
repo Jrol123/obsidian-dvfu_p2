@@ -1,39 +1,28 @@
 ---
 
 kanban-plugin: board
+updated_at: 2026-10-13T12:24:04.162+10:00
+edited_seconds: 20
 
 ---
 
 ## Done
 
-**Выполнено**
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 1  [completion:: 2025-10-23]
+- [ ] **МПИС**
+	Лаба 1
 	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 2  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 3  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 4  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 5  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 6  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 7  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 8  [completion:: 2025-10-23]
-	#учёба
-- [x] **[[Материалы/Параллельное программирование.pdf|ПП]]:** Лаба 9  [completion:: 2025-10-23]
+- [ ] **МММППР**
+	Лаба 1
 	#учёба
 
 
 ## Beign checked
 
-- [ ] **ОС**: лаба 1
+- [ ] **Английский**
+	ДЗ 1
 	#учёба
-- [ ] **ОС**: лаба 2
-	#учёба
-- [ ] **Unity**: Лаба 1
+- [ ] **АПС**
+	Эссе 1
 	#учёба
 
 
@@ -43,23 +32,11 @@ kanban-plugin: board
 
 ## TODO
 
-- [ ] Сделать поиск url для отзовика
-	#курсач
-- [ ] **ОС**: лаба 7
+- [ ] **МПИС**
+	Лаба 2
 	#учёба
-- [ ] **ОС**: Спросить препода, зачтутся ли нам 4-5 лабы (хотя-бы частично)
-	#учёба
-- [ ] **ОС**: Определиться с лабами
-	#учёба
-- [ ] **Введение в ИИ**: Вписать
-	#учёба
-- [ ] [[Вычмат Т. В. 1]]
-	#учёба
-- [ ] **Нейронные сети и глубокое обучение**: Вписать
-	#учёба
-- [ ] **ММ**: Вписать
-	#учёба
-- [ ] **ИИ**: Повторить вывод регрессии
+- [ ] МММППР
+	Лаба 2
 	#учёба
 
 
@@ -67,99 +44,14 @@ kanban-plugin: board
 
 
 
-***
-
 ## Архивировать
 
-- [x] Добавить считывание собственных id  [completion:: 2025-09-26]
-	#курсач
-- [x] 4-я лаба по БД БД (1)  [completion:: 2025-09-26]
-	#учёба
-- [x] Обновить `YandexParser` под абстрактный парсер  [completion:: 2025-05-08]
-	#курсач
-- [x] Сделать мега-класс для парсинга  [completion:: 2025-05-09]
-	#курсач
-- [x] Сделать мега-`SentAnalysis`  [completion:: 2025-05-09]
-	#курсач
-- [x] 6-я лаба по БД (2)  [completion:: 2025-09-26]
-	#учёба
-- [x] 2-я лаба по БД (2)  [completion:: 2025-09-26]
-	#учёба
-- [x] 3-я лаба по БД (2)  [completion:: 2025-09-26]
-	#учёба
-- [x] Отнести и настроить приставку  [completion:: 2025-09-26]
-	#личное
-- [x] Подготовиться к 2-му коллоквиуму по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Поставить соника на PS3  [completion:: 2025-09-26]
-	#личное
-- [x] Сделать 1-е ИДЗ по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 2-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 3-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 4-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 4-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 5-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 5-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 6-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 6-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 7-е дз по Функану  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 7-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 8-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Сделать 9-ю лабу по ЧМД  [completion:: 2025-09-26]
-	#учёба
-- [x] Определить фронт работ с УМФ  [completion:: 2025-09-26]
-	#учёба
-- [x] Посмотреть видео по ЦК  [completion:: 2025-09-26]
-	#учёба
-- [x] 20-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 18-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 17-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 16-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 15-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 14-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 13-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] [[Почистить репозитории]]  [completion:: 2025-05-03]
-- [x] 6-я лаба по ЦК  [completion:: 2025-05-03]
-	#цк
-- [x] 8-я лаба по ЦК  [completion:: 2025-05-03]
-	#цк
-- [x] Оформить список дел  [completion:: 2025-05-03]
-	
-	#личное
-- [x] Описать то, что нужно сделать по курсачу  [completion:: 2025-05-03]
-	#курсач #личное
-- [x] Тест по Yadro  [completion:: 2025-05-08]
-	#стажировка @{06.05.2025-00:00}
-- [x] 12-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 9-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 11-я лаба по ЦК  [completion:: 2025-05-08]
-	#цк
-- [x] 5-я лаба по БД (1)  [completion:: 2025-05-08]
-	#учёба
+
+
+
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false],"move-tags":true,"tag-sort":[{"tag":"#стажировка"},{"tag":"#личное"},{"tag":"#курсач"},{"tag":"#учёба"}],"inline-metadata-position":"metadata-table","metadata-keys":[{"metadataKey":"tags","label":"Тэги","shouldHideLabel":false,"containsMarkdown":false},{"metadataKey":"Материал","label":"Материал","shouldHideLabel":false,"containsMarkdown":true},{"metadataKey":"```dataview```","label":"","shouldHideLabel":false,"containsMarkdown":true}],"new-note-folder":"Задачи","tag-colors":[{"tagKey":"#стажировка","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(83, 255, 0, 0.31)"},{"tagKey":"#учёба","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(0, 140, 255, 0.43)"},{"tagKey":"#курсач","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(255, 0, 0, 1)"},{"tagKey":"#цк","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(85, 155, 167, 1)"},{"tagKey":"#личное","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(210, 0, 255, 0.61)"}],"move-task-metadata":false,"full-list-lane-width":false,"tag-action":"kanban"}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false],"move-tags":true,"tag-sort":[{"tag":"#стажировка"},{"tag":"#курсач"},{"tag":"#учёба"}],"inline-metadata-position":"metadata-table","metadata-keys":[{"metadataKey":"tags","label":"Тэги","shouldHideLabel":false,"containsMarkdown":false},{"metadataKey":"Материал","label":"Материал","shouldHideLabel":false,"containsMarkdown":true},{"metadataKey":"```dataview```","label":"","shouldHideLabel":false,"containsMarkdown":true}],"new-note-folder":"Задачи","tag-colors":[{"tagKey":"#стажировка","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(83, 255, 0, 0.31)"},{"tagKey":"#учёба","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(0, 140, 255, 0.43)"},{"tagKey":"#курсач","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(255, 0, 0, 1)"},{"tagKey":"#цк","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(85, 155, 167, 1)"},{"tagKey":"#личное","color":"rgba(255, 255, 255, 1)","backgroundColor":"rgba(210, 0, 255, 0.61)"}],"move-task-metadata":false,"full-list-lane-width":false,"tag-action":"kanban"}
 ```
 %%
