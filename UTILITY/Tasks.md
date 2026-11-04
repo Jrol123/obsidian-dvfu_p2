@@ -32,14 +32,14 @@ edited_seconds: 20
 
 ## Beign checked
 
+- [ ] ДЗ 3
+	#Английский
 - [ ] Лаба 2
 	#МММППР
 
 
 ## In progress
 
-- [ ] ДЗ 3
-	#Английский
 
 
 ## TODO
