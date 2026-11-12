@@ -8,7 +8,7 @@
       <incoming>Flow_id_96307753a79a</incoming>
       <outgoing>Flow_id_70d665bc13e2</outgoing>
     </userTask>
-    <userTask id="UserTask_id_7481d50b8545" name="Зарегистрировать заявку в Excel" implementation="##unspecified">
+    <userTask id="UserTask_id_7481d50b8545" name="Зарегистрировать заявку" implementation="##unspecified">
       <incoming>Flow_id_70d665bc13e2</incoming>
       <outgoing>Flow_id_d51239fde353</outgoing>
     </userTask>
@@ -200,6 +200,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_id_7481d50b8545_di" bpmnElement="UserTask_id_7481d50b8545">
         <dc:Bounds x="990" y="68" width="186" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ExclusiveGateway_id_d0762b060497_di" bpmnElement="ExclusiveGateway_id_d0762b060497" isMarkerVisible="true">
         <dc:Bounds x="1271" y="83" width="50" height="50" />
@@ -320,7 +321,7 @@
       <bpmndi:BPMNShape id="BPMNShape_1mu0woe" bpmnElement="Gateway_1w7sm08" isMarkerVisible="true">
         <dc:Bounds x="3145" y="95" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="3087" y="60" width="88" height="14" />
+          <dc:Bounds x="3088" y="60" width="88" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_id_e3155d055354_di" bpmnElement="EndEvent_id_e3155d055354">
@@ -512,7 +513,7 @@
         <di:waypoint x="2392" y="120" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0vtacsb_di" bpmnElement="Participant_1n8z8x4" isHorizontal="true">
-        <dc:Bounds x="670" y="-110" width="4299" height="50" />
+        <dc:Bounds x="530" y="-110" width="4439" height="50" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1uay99d_di" bpmnElement="Flow_1uay99d">
