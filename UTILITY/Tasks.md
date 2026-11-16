@@ -52,6 +52,8 @@ edited_seconds: 20
 
 ## In progress
 
+- [ ] Лаба 4
+	#МММППР
 
 
 ## TODO
@@ -76,8 +78,6 @@ edited_seconds: 20
 	#АПКИС
 - [ ] Эссе 3
 	#АПКИС
-- [ ] Лаба 4
-	#МММППР
 
 
 ## URGENT
