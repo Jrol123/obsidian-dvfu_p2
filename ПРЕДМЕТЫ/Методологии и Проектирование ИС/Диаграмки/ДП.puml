@@ -1,0 +1,50 @@
+@startuml Диаграмма прецедентов
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+left to right direction
+
+Person(Scientist, "Научный сотрудник") 
+Person(DeptHead, "Руководитель подразделения")
+Person(SciSecretary, "Учёный секретарь")
+' Person(Admin, "Администратор")
+
+DeptHead --|> Scientist
+SciSecretary --|> DeptHead
+' Admin --|> SciSecretary
+
+usecase "Добавить научный результат" as UC_AddResult
+usecase "Редактировать собственный результат" as UC_EditOwn
+usecase "Сформировать КБПР" as UC_ViewPersonalStats
+usecase "Сформировать индивидуальный отчёт" as UC_GeneratePersonalReport
+usecase "Сформировать отчёт по подразделению" as UC_GenerateDeptReport
+usecase "Модерировать научные результаты\n(просмотр и правка всех)" as UC_Moderate
+usecase "Посмотреть результаты сотрудников подразделения" as UC_ViewDeptResults
+usecase "Управлять грантами" as UC_ManageGrants
+usecase "Управлять пользователями" as UC_ManageUsers
+usecase "Настроить системы\n(коэффициенты КБПР, шаблоны)" as UC_SystemSettings
+' usecase "Просмотр журналов событий" as UC_ViewLogs
+usecase "Использовать ИИ-помощника\n(парсинг библиографии, чат-бот, помощь с навигацией по системе, получение статистики)" as UC_AIHelper
+usecase "Настроить систему расписания вызова функций" as UC_TimeManagementSettings
+
+' Ассоциации акторов с вариантами использования
+Scientist --> UC_AddResult
+Scientist --> UC_EditOwn
+Scientist --> UC_ViewPersonalStats
+Scientist --> UC_GeneratePersonalReport
+Scientist --> UC_AIHelper
+
+DeptHead --> UC_ViewDeptResults
+DeptHead --> UC_GenerateDeptReport
+DeptHead --> UC_ManageGrants
+
+SciSecretary --> UC_Moderate
+
+SciSecretary --> UC_ManageUsers
+SciSecretary --> UC_SystemSettings
+SciSecretary --> UC_TimeManagementSettings
+' Admin --> UC_ViewLogs
+
+' Расширения: ИИ-помощник может быть вызван из двух ключевых прецедентов
+UC_AddResult <.. UC_AIHelper : заполнить поля по библиографии
+
+@enduml
