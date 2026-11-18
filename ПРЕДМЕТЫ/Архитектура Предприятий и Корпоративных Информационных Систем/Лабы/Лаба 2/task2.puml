@@ -6,14 +6,14 @@ Person(B, "Бухгалтер")
 Person(GB, "Главный\nбухгалтер")
 
 rectangle "Система бухгалтерского учёта" {
-  usecase "Ввод первичного документа" as UC1
-  usecase "Формирование проводки" as UC2
-  usecase "Закрытие периода" as UC3
-  usecase "Формирование отчётности" as UC4
+  usecase "Ввод первичного документа" as B1
+  usecase "Формирование проводки" as B2
+  usecase "Закрытие периода" as G1
+  usecase "Формирование отчётности" as G2
 }
 
-B --> UC1
-B --> UC2
-GB --> UC3
-GB --> UC4
+B --> B1
+B --> B2
+GB --> G1
+GB --> G2
 @enduml
