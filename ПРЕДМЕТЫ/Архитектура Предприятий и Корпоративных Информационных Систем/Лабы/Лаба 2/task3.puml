@@ -1,206 +1,28 @@
-@startuml АДК
-skinparam classAttributeIconSize 0
-skinparam shadowing false
-hide empty members
+@startuml Диаграмма классов
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
-enum "Тип счёта" as AccountType {
-  Активный
-  Пассивный
-  АктивноПассивный
+class "Документ" as Doc {
+    +номер: String
+    +дата: Date
+    +провести()
 }
 
-enum "Статус документа" as DocStatus {
-  Черновик
-  Проведён
-  Сторнирован
-}
-
-enum "Статус периода" as PeriodStatus {
-  Открыт
-  Закрыт
-}
-
-class "Организация" as Org {
-  - ИНН: String
-  - КПП: String
-  - наименование: String
-  - системаНалогообложения: String
-  + получитьПланСчетов(): ПланСчетов
-}
-
-class "План счетов" as Chart {
-  - версия: String
-  - датаУтверждения: Date
-  + найтиСчёт(код: String): СчётУчёта
-  + добавитьСчёт(с: СчётУчёта): void
-}
-
-class "Счёт учёта" as Account {
-  - код: String
-  - наименование: String
-  - тип: ТипСчёта
-  - валютный: Boolean
-  + сальдоНа(д: Date): BigDecimal
-  + оборотыЗа(п: БухгалтерскийПериод): BigDecimal
-}
-
-class "Аналитический счёт (субсчёт)" as SubAccount {
-  - аналитика1: String
-  - аналитика2: String
-  + сальдоПоКонтрагенту(к: Контрагент): BigDecimal
-}
-
-abstract class "Первичный документ" as Doc {
-  - номер: String
-  - дата: Date
-  - сумма: BigDecimal
-  - статус: СтатусДокумента
-  + провести(): void
-  + сторнировать(): void
-  {abstract} + сформироватьПроводки(): List~Проводка~
-}
-
-class "Счёт-фактура" as Invoice {
-  - ставкаНДС: BigDecimal
-  - суммаНДС: BigDecimal
-  + сформироватьПроводки(): List~Проводка~
-}
-
-class "Товарная накладная" as Waybill {
-  - склад: String
-  - позиции: String
-  + сформироватьПроводки(): List~Проводка~
-}
-
-class "Платёжное поручение" as PayOrder {
-  - расчётныйСчёт: String
-  - БИК: String
-  - назначениеПлатежа: String
-  + сформироватьПроводки(): List~Проводка~
+class "Первичный документ" as PDoc {
+    +контрагент: String
+    +сумма: Money
 }
 
 class "Проводка" as Entry {
-  - дата: Date
-  - сумма: BigDecimal
-  - содержание: String
-  - номерДокумента: String
-  + проверитьКорреспонденцию(): Boolean
-  + сторнировать(): Проводка
+    +дата: Date
+    +сумма: Money
 }
 
-class "Журнал проводок" as Journal {
-  - датаВедения: Date
-  + добавить(п: Проводка): void
-  + выбратьПоСчёту(с: СчётУчёта): List~Проводка~
-  + итогПоДебету(): BigDecimal
-  + итогПоКредиту(): BigDecimal
+class "Счёт учёта" as Acc {
+    +номер: String
+    +наименование: String
 }
 
-class "Бухгалтерский период" as Period {
-  - год: Integer
-  - месяц: Integer
-  - статус: СтатусПериода
-  + закрыть(): void
-  + открытДляПроводок(): Boolean
-}
-
-class "Контрагент" as Partner {
-  - ИНН: String
-  - наименование: String
-  - договор: String
-  + задолженностьНа(д: Date): BigDecimal
-}
-
-abstract class "Пользователь" as User {
-  - ФИО: String
-  - логин: String
-  + войтиВСистему(): Boolean
-}
-
-class "Бухгалтер" as Acc {
-  - участокУчёта: String
-  + зарегистрироватьДокумент(д: ПервичныйДокумент): void
-}
-
-class "Главный бухгалтер" as Chief {
-  - сертификатЭЦП: String
-  + закрытьПериод(п: БухгалтерскийПериод): void
-  + утвердитьОтчётность(о: ФинансоваяОтчётность): void
-}
-
-class "Аудитор" as Auditor {
-  - аудиторскаяОрганизация: String
-  + проверитьВыборку(ж: ЖурналПроводок): void
-}
-
-interface "Финансовая отчётность" as Report {
-  + сформировать(п: БухгалтерскийПериод): void
-  + проверитьКонтрольныеСоотношения(): Boolean
-  + выгрузитьXML(): String
-}
-
-class "Оборотно-сальдовая ведомость" as TrialBalance {
-  - сальдоНачальное: BigDecimal
-  - оборотыДебет: BigDecimal
-  - оборотыКредит: BigDecimal
-  - сальдоКонечное: BigDecimal
-  + сформировать(п: БухгалтерскийПериод): void
-}
-
-class "Бухгалтерский баланс" as Balance {
-  - актив: BigDecimal
-  - пассив: BigDecimal
-  + сформировать(п: БухгалтерскийПериод): void
-  + проверитьРавенствоАктивПассив(): Boolean
-}
-
-' ---------- ОБОБЩЕНИЕ (наследование) ----------
-Account <|-- SubAccount
-Doc <|-- Invoice
-Doc <|-- Waybill
-Doc <|-- PayOrder
-User <|-- Acc
-User <|-- Chief
-User <|-- Auditor
-
-' ---------- КОМПОЗИЦИЯ (часть не существует без целого) ----------
-Org "1" *-- "1" Chart : содержит
-Org "1" *-- "1..*" Period : ведёт учёт по периодам
-Period "1" *-- "1" Journal : содержит
-Journal "1" *-- "0..*" Entry : состоит из
-
-' ---------- АГРЕГАЦИЯ (часть может существовать отдельно) ----------
-Chart "1" o-- "1..*" Account : объединяет
-Account "1" o-- "0..*" SubAccount : детализируется
-
-' ---------- АССОЦИАЦИИ (с кратностями и ролями) ----------
-Entry "0..*" --> "1" Account : дебет
-Entry "0..*" --> "1" Account : кредит
-Doc "1" --> "0..*" Entry : порождает
-Partner "1" -- "0..*" Doc : сторона договора
-Acc "1" -- "0..*" Entry : автор
-Chief "1" -- "0..*" Period : закрывает
-
-' ---------- ЗАВИСИМОСТИ ----------
-TrialBalance ..> Journal : <<derive>>
-Balance ..> TrialBalance : <<use>>
-Auditor ..> Journal : <<use>>
-Account ..> AccountType : <<use>>
-Doc ..> DocStatus : <<use>>
-Period ..> PeriodStatus : <<use>>
-
-' ---------- РЕАЛИЗАЦИЯ интерфейса ----------
-Report <|.. TrialBalance
-Report <|.. Balance
-
-note right of Entry
-  Двойная запись: каждая проводка связана
-  ровно с одним счётом по дебету и одним по кредиту,
-  суммы по дебету и кредиту равны
-end note
-
-note bottom of Journal
-  Композиция: при удалении журнала за период
-  удаляются все его проводки
-end note
+Doc <|-- PDoc
+PDoc "1" *-- "1..*" Entry
+Entry --> "2" Acc : дебет/кредит
 @enduml

@@ -1,86 +1,19 @@
-@startuml АДП
+@startuml Диаграмма вариантов использования (прецедентов)
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 left to right direction
-skinparam shadowing false
-skinparam packageStyle rectangle
-skinparam actorStyle awesome
 
-Person(Acc, "Бухгалтер")
-Person(Chief, "Главный бухгалтер")
-Person(Aud, "Аудитор")
-System_Ext( Bank, "Банк")
-System_Ext( Tax, "ФНС")
+Person(B, "Бухгалтер")
+Person(GB, "Главный\nбухгалтер")
 
-' Обобщение актёров: главный бухгалтер наследует все прецеденты бухгалтера
-Chief --|> Acc
-
-rectangle "ИС «Бухгалтерский учёт»" {
-
-  usecase "B1. Регистрация\nпервичного документа" as B1
-  usecase "B2. Формирование\nпроводки" as B2
-  usecase "B3. Расчёт\nзаработной платы" as B3
-  usecase "B4. Импорт банковской\nвыписки" as B4
-  usecase "B5. Формирование оборотно-\nсальдовой ведомости" as B5
-  usecase "B6. Сторнирование\nпроводки" as B6
-  usecase "B7. Расчёт НДФЛ\nи страховых взносов" as B7
-  usecase "B8. Проверка корреспонденции\nсчетов" as B8
-  usecase "B9. Сверка расчётов\nс бюджетом (ЕНС)" as B9
-
-  usecase "G1. Закрытие\nотчётного периода" as G1
-  usecase "G2. Формирование\nбухгалтерской отчётности" as G2
-  usecase "G3. Передача отчётности\nв ФНС" as G3
-  usecase "G4. Проверка контрольных\nсоотношений" as G4
-
-  usecase "A1. Аудит журнала\nпроводок" as A1
-  usecase "A2. Формирование аудиторского\nзаключения" as A2
-  usecase "A3. Выборка документов\nдля проверки" as A3
+rectangle "Система бухгалтерского учёта" {
+  usecase "Ввод первичного документа" as UC1
+  usecase "Формирование проводки" as UC2
+  usecase "Закрытие периода" as UC3
+  usecase "Формирование отчётности" as UC4
 }
 
-' --- Ассоциации «актёр — прецедент» (основные актёры) ---
-Acc --> B1
-Acc --> B2
-Acc --> B3
-Acc --> B4
-Acc --> B5
-Acc --> B9
-
-Chief --> G1
-Chief --> G2
-Chief --> G3
-
-Aud --> A1
-Aud --> A2
-
-' --- Ассоциации с второстепенными (внешними) актёрами ---
-B4 --> Bank
-B3 --> Bank : реестр на зачисление
-G3 --> Tax
-B9 --> Tax
-
-' --- Отношения включения ---
-B1 .> B2 : <<include>>
-B2 .> B8 : <<include>>
-B3 .> B7 : <<include>>
-G1 .> B5 : <<include>>
-G1 .> G4 : <<include>>
-G2 .> B5 : <<include>>
-G3 .> G2 : <<include>>
-A1 .> A3 : <<include>>
-A2 .> A1 : <<include>>
-
-' --- Отношение расширения ---
-B6 .> B2 : <<extend>>
-
-note bottom of B6
-  Точка расширения: п. 5 базового потока B2 —
-  если счета или сумма указаны ошибочно,
-  выполняется расширяющий прецедент «Сторнирование проводки»
-end note
-
-note bottom of G1
-  Предусловие: пользователь зарегистрирован в системе,
-  все первичные документы периода проведены.
-  Постусловие: период закрыт, проводки заблокированы,
-  отчётность сформирована.
-end note
+B --> UC1
+B --> UC2
+GB --> UC3
+GB --> UC4
 @enduml
