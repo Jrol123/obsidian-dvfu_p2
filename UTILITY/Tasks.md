@@ -54,12 +54,12 @@ edited_seconds: 20
 
 ## Beign checked
 
+- [ ] Лаба 2
+	#АПКИС
 
 
 ## In progress
 
-- [ ] Лаба 2
-	#АПКИС
 
 
 ## TODO

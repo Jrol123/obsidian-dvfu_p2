@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  id="Definitions_Choreography"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+
+  <bpmn:message id="Message_Invoice" name="Счёт на оплату" />
+  <bpmn:message id="Message_Payment" name="Платёжное поручение" />
+  <bpmn:message id="Message_Act" name="Акт сверки расчётов" />
+
+  <bpmn:collaboration id="Collaboration_4" name="Регламент расчётов с поставщиком">
+    <bpmn:participant id="Participant_Supplier" name="Поставщик" />
+    <bpmn:participant id="Participant_Buh" name="Бухгалтерия" />
+
+    <bpmn:messageFlow id="MessageFlow_1" name="1. Счёт на оплату" sourceRef="Participant_Supplier" targetRef="Participant_Buh" messageRef="Message_Invoice" />
+    <bpmn:messageFlow id="MessageFlow_2" name="2. Платёжное поручение" sourceRef="Participant_Buh" targetRef="Participant_Supplier" messageRef="Message_Payment" />
+    <bpmn:messageFlow id="MessageFlow_3" name="3. Акт сверки расчётов" sourceRef="Participant_Buh" targetRef="Participant_Supplier" messageRef="Message_Act" />
+
+    <bpmn:textAnnotation id="TextAnnotation_C">
+      <bpmn:text>Порядок обмена: 1 → 2 → 3. Оплата — 5 банковских дней с даты счёта, сверка — по итогам месяца</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_C" sourceRef="Participant_Buh" targetRef="TextAnnotation_C" associationDirection="None" />
+  </bpmn:collaboration>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4">
+    <bpmndi:BPMNPlane id="BPMNPlane_4" bpmnElement="Collaboration_4">
+      <bpmndi:BPMNShape id="Participant_Supplier_di" bpmnElement="Participant_Supplier" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="680" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_Buh_di" bpmnElement="Participant_Buh" isHorizontal="true">
+        <dc:Bounds x="160" y="400" width="680" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_C_di" bpmnElement="TextAnnotation_C">
+        <dc:Bounds x="890" y="390" width="180" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_1_di" bpmnElement="MessageFlow_1">
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="400" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="260" y="250" width="120" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_2_di" bpmnElement="MessageFlow_2">
+        <di:waypoint x="470" y="400" />
+        <di:waypoint x="470" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="480" y="250" width="140" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_3_di" bpmnElement="MessageFlow_3">
+        <di:waypoint x="690" y="400" />
+        <di:waypoint x="690" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="700" y="250" width="130" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_C_di" bpmnElement="Association_C">
+        <di:waypoint x="840" y="430" />
+        <di:waypoint x="890" y="430" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
