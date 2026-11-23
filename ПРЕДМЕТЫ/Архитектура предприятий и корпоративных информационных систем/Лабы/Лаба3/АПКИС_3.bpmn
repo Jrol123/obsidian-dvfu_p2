@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  id="Definitions_Conversation"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+
+  <bpmn:category id="Category_1">
+    <bpmn:categoryValue id="CategoryValue_1" value="Тема диалога: расчёты по счёту" />
+  </bpmn:category>
+
+  <bpmn:message id="Message_Invoice" name="Счёт на оплату" />
+  <bpmn:message id="Message_Payment" name="Платёжное поручение" />
+
+  <bpmn:collaboration id="Collaboration_3" name="Диалог «Расчёты по счёту»">
+    <bpmn:participant id="Participant_Supplier" name="Поставщик" />
+    <bpmn:participant id="Participant_Buh" name="Бухгалтерия" />
+
+    <bpmn:messageFlow id="MessageFlow_Invoice" name="Счёт на оплату" sourceRef="Participant_Supplier" targetRef="Participant_Buh" messageRef="Message_Invoice" />
+    <bpmn:messageFlow id="MessageFlow_Payment" name="Платёжное поручение" sourceRef="Participant_Buh" targetRef="Participant_Supplier" messageRef="Message_Payment" />
+
+    <bpmn:group id="Group_1" categoryValueRef="CategoryValue_1" />
+    <bpmn:textAnnotation id="TextAnnotation_1">
+      <bpmn:text>Одна тема обсуждения объединяет два сообщения: счёт и его оплата</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1" sourceRef="Participant_Buh" targetRef="TextAnnotation_1" associationDirection="None" />
+  </bpmn:collaboration>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_3">
+    <bpmndi:BPMNPlane id="BPMNPlane_3" bpmnElement="Collaboration_3">
+      <bpmndi:BPMNShape id="Participant_Supplier_di" bpmnElement="Participant_Supplier" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="560" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_Buh_di" bpmnElement="Participant_Buh" isHorizontal="true">
+        <dc:Bounds x="160" y="420" width="560" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Group_1_di" bpmnElement="Group_1">
+        <dc:Bounds x="250" y="180" width="460" height="200" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="330" y="188" width="200" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1_di" bpmnElement="TextAnnotation_1">
+        <dc:Bounds x="770" y="410" width="170" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_Invoice_di" bpmnElement="MessageFlow_Invoice">
+        <di:waypoint x="300" y="140" />
+        <di:waypoint x="300" y="420" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="310" y="250" width="110" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="MessageFlow_Payment_di" bpmnElement="MessageFlow_Payment">
+        <di:waypoint x="560" y="420" />
+        <di:waypoint x="560" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="570" y="250" width="130" height="28" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1_di" bpmnElement="Association_1">
+        <di:waypoint x="720" y="450" />
+        <di:waypoint x="770" y="450" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

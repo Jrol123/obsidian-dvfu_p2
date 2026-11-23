@@ -1,0 +1,19 @@
+@startuml Диаграмма вариантов использования (прецедентов)
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+left to right direction
+
+Person(B, "Бухгалтер")
+Person(GB, "Главный\nбухгалтер")
+
+rectangle "Система бухгалтерского учёта" {
+  usecase "Ввод первичного документа" as B1
+  usecase "Формирование проводки" as B2
+  usecase "Закрытие периода" as G1
+  usecase "Формирование отчётности" as G2
+}
+
+B --> B1
+B --> B2
+GB --> G1
+GB --> G2
+@enduml
