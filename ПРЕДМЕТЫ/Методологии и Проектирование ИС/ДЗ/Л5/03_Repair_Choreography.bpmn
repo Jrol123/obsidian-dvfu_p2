@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_RepairChoreography" targetNamespace="urn:tech-repair:bpmn">
+  <bpmn:message id="Message_Request" name="Заявка на ремонт" />
+  <bpmn:message id="Message_Estimate" name="Диагноз, стоимость и срок" />
+  <bpmn:message id="Message_Decision" name="Согласие или отказ" />
+  <bpmn:message id="Message_Ready" name="Статус заказа и время выдачи" />
+  <bpmn:message id="Message_Receipt" name="Акт выдачи" />
+  <bpmn:choreography id="RepairChoreography" name="Отдел ремонта техники — Хореография">
+    <bpmn:participant id="Customer" name="Клиент" />
+    <bpmn:participant id="Workshop" name="Отдел ремонта техники" />
+    <bpmn:messageFlow id="MessageFlow_Request" name="Заявка на ремонт" sourceRef="Customer" targetRef="Workshop" messageRef="Message_Request" />
+    <bpmn:messageFlow id="MessageFlow_Estimate" name="Диагноз, стоимость и срок" sourceRef="Workshop" targetRef="Customer" messageRef="Message_Estimate" />
+    <bpmn:messageFlow id="MessageFlow_Decision" name="Согласие или отказ" sourceRef="Customer" targetRef="Workshop" messageRef="Message_Decision" />
+    <bpmn:messageFlow id="MessageFlow_Ready" name="Статус заказа и время выдачи" sourceRef="Workshop" targetRef="Customer" messageRef="Message_Ready" />
+    <bpmn:messageFlow id="MessageFlow_Receipt" name="Акт выдачи" sourceRef="Workshop" targetRef="Customer" messageRef="Message_Receipt" />
+    <bpmn:startEvent id="Begin" name="Нужен ремонт">
+      <bpmn:outgoing>ChSequence_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:choreographyTask id="Ch_Request" name="Подать заявку на ремонт" initiatingParticipantRef="Customer">
+      <bpmn:incoming>ChSequence_1</bpmn:incoming>
+      <bpmn:outgoing>ChSequence_2</bpmn:outgoing>
+      <bpmn:participantRef>Customer</bpmn:participantRef>
+      <bpmn:participantRef>Workshop</bpmn:participantRef>
+      <bpmn:messageFlowRef>MessageFlow_Request</bpmn:messageFlowRef>
+    </bpmn:choreographyTask>
+    <bpmn:choreographyTask id="Ch_Estimate" name="Передать смету" initiatingParticipantRef="Workshop">
+      <bpmn:incoming>ChSequence_2</bpmn:incoming>
+      <bpmn:outgoing>ChSequence_3</bpmn:outgoing>
+      <bpmn:participantRef>Customer</bpmn:participantRef>
+      <bpmn:participantRef>Workshop</bpmn:participantRef>
+      <bpmn:messageFlowRef>MessageFlow_Estimate</bpmn:messageFlowRef>
+    </bpmn:choreographyTask>
+    <bpmn:choreographyTask id="Ch_Decision" name="Сообщить решение о ремонте" initiatingParticipantRef="Customer">
+      <bpmn:incoming>ChSequence_3</bpmn:incoming>
+      <bpmn:outgoing>ChSequence_4</bpmn:outgoing>
+      <bpmn:participantRef>Customer</bpmn:participantRef>
+      <bpmn:participantRef>Workshop</bpmn:participantRef>
+      <bpmn:messageFlowRef>MessageFlow_Decision</bpmn:messageFlowRef>
+    </bpmn:choreographyTask>
+    <bpmn:choreographyTask id="Ch_Ready" name="Уведомить о выдаче" initiatingParticipantRef="Workshop">
+      <bpmn:incoming>ChSequence_4</bpmn:incoming>
+      <bpmn:outgoing>ChSequence_5</bpmn:outgoing>
+      <bpmn:participantRef>Customer</bpmn:participantRef>
+      <bpmn:participantRef>Workshop</bpmn:participantRef>
+      <bpmn:messageFlowRef>MessageFlow_Ready</bpmn:messageFlowRef>
+    </bpmn:choreographyTask>
+    <bpmn:choreographyTask id="Ch_Receipt" name="Передать акт выдачи" initiatingParticipantRef="Workshop">
+      <bpmn:incoming>ChSequence_5</bpmn:incoming>
+      <bpmn:outgoing>ChSequence_6</bpmn:outgoing>
+      <bpmn:participantRef>Customer</bpmn:participantRef>
+      <bpmn:participantRef>Workshop</bpmn:participantRef>
+      <bpmn:messageFlowRef>MessageFlow_Receipt</bpmn:messageFlowRef>
+    </bpmn:choreographyTask>
+    <bpmn:endEvent id="Finish" name="Заказ закрыт">
+      <bpmn:incoming>ChSequence_6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="ChSequence_1" sourceRef="Begin" targetRef="Ch_Request" />
+    <bpmn:sequenceFlow id="ChSequence_2" sourceRef="Ch_Request" targetRef="Ch_Estimate" />
+    <bpmn:sequenceFlow id="ChSequence_3" sourceRef="Ch_Estimate" targetRef="Ch_Decision" />
+    <bpmn:sequenceFlow id="ChSequence_4" sourceRef="Ch_Decision" targetRef="Ch_Ready" />
+    <bpmn:sequenceFlow id="ChSequence_5" sourceRef="Ch_Ready" targetRef="Ch_Receipt" />
+    <bpmn:sequenceFlow id="ChSequence_6" sourceRef="Ch_Receipt" targetRef="Finish" />
+  </bpmn:choreography>
+  <bpmndi:BPMNDiagram id="Diagram_RepairChoreography" name="Отдел ремонта техники — Хореография">
+    <bpmndi:BPMNPlane id="Plane_RepairChoreography" bpmnElement="RepairChoreography">
+      <bpmndi:BPMNShape id="Shape_Begin" bpmnElement="Begin">
+        <dc:Bounds x="54" y="170" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="21" y="214" width="102" height="30" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Request" bpmnElement="Ch_Request">
+        <dc:Bounds x="136" y="118" width="174" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Request_Customer" bpmnElement="Customer" participantBandKind="top_initiating" choreographyActivityShape="Shape_Ch_Request" isMessageVisible="false">
+        <dc:Bounds x="136" y="118" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Request_Workshop" bpmnElement="Workshop" participantBandKind="bottom_non_initiating" choreographyActivityShape="Shape_Ch_Request" isMessageVisible="false">
+        <dc:Bounds x="136" y="229" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Estimate" bpmnElement="Ch_Estimate">
+        <dc:Bounds x="361" y="118" width="174" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Estimate_Customer" bpmnElement="Customer" participantBandKind="top_non_initiating" choreographyActivityShape="Shape_Ch_Estimate" isMessageVisible="false">
+        <dc:Bounds x="361" y="118" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Estimate_Workshop" bpmnElement="Workshop" participantBandKind="bottom_initiating" choreographyActivityShape="Shape_Ch_Estimate" isMessageVisible="false">
+        <dc:Bounds x="361" y="229" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Decision" bpmnElement="Ch_Decision">
+        <dc:Bounds x="586" y="118" width="174" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Decision_Customer" bpmnElement="Customer" participantBandKind="top_initiating" choreographyActivityShape="Shape_Ch_Decision" isMessageVisible="false">
+        <dc:Bounds x="586" y="118" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Decision_Workshop" bpmnElement="Workshop" participantBandKind="bottom_non_initiating" choreographyActivityShape="Shape_Ch_Decision" isMessageVisible="false">
+        <dc:Bounds x="586" y="229" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Ready" bpmnElement="Ch_Ready">
+        <dc:Bounds x="811" y="118" width="174" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Ready_Customer" bpmnElement="Customer" participantBandKind="top_non_initiating" choreographyActivityShape="Shape_Ch_Ready" isMessageVisible="false">
+        <dc:Bounds x="811" y="118" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Ready_Workshop" bpmnElement="Workshop" participantBandKind="bottom_initiating" choreographyActivityShape="Shape_Ch_Ready" isMessageVisible="false">
+        <dc:Bounds x="811" y="229" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Receipt" bpmnElement="Ch_Receipt">
+        <dc:Bounds x="1036" y="118" width="174" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Receipt_Customer" bpmnElement="Customer" participantBandKind="top_non_initiating" choreographyActivityShape="Shape_Ch_Receipt" isMessageVisible="false">
+        <dc:Bounds x="1036" y="118" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ch_Receipt_Workshop" bpmnElement="Workshop" participantBandKind="bottom_initiating" choreographyActivityShape="Shape_Ch_Receipt" isMessageVisible="false">
+        <dc:Bounds x="1036" y="229" width="174" height="29" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Finish" bpmnElement="Finish">
+        <dc:Bounds x="1250" y="170" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1217" y="214" width="102" height="30" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_1" bpmnElement="ChSequence_1">
+        <di:waypoint x="90" y="188" />
+        <di:waypoint x="136" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_2" bpmnElement="ChSequence_2">
+        <di:waypoint x="310" y="188" />
+        <di:waypoint x="361" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_3" bpmnElement="ChSequence_3">
+        <di:waypoint x="535" y="188" />
+        <di:waypoint x="586" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_4" bpmnElement="ChSequence_4">
+        <di:waypoint x="760" y="188" />
+        <di:waypoint x="811" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_5" bpmnElement="ChSequence_5">
+        <di:waypoint x="985" y="188" />
+        <di:waypoint x="1036" y="188" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_ChSequence_6" bpmnElement="ChSequence_6">
+        <di:waypoint x="1210" y="188" />
+        <di:waypoint x="1250" y="188" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
