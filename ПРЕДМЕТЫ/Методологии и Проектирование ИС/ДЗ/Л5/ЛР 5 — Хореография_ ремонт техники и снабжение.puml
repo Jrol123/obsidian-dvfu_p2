@@ -1,0 +1,30 @@
+@startdot Choreography
+digraph Choreography {
+    graph [rankdir=LR, bgcolor="white", pad=0.25, ranksep=0.65];
+    node [fontname="Arial", fontsize=12, fontcolor="#17212B", color="#374151"];
+    edge [color="#374151", penwidth=1.3, arrowsize=0.75];
+    start [shape=circle, label="", width=0.29, fixedsize=true, penwidth=1.2];
+    request [shape=plain, label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="8" COLOR="#374151" STYLE="ROUNDED" BGCOLOR="white">
+    <TR><TD WIDTH="176" BGCOLOR="white" HEIGHT="26">Отдел ремонта техники</TD></TR>
+    <HR/>
+    <TR><TD WIDTH="176" HEIGHT="58"><B>Передать заявку<BR/>на запчасти</B></TD></TR>
+    <HR/>
+    <TR><TD WIDTH="176" BGCOLOR="#DEE3E9" HEIGHT="26">Склад запчастей</TD></TR>
+    </TABLE>
+    >];
+    confirmation [shape=plain, label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="8" COLOR="#374151" STYLE="ROUNDED" BGCOLOR="white">
+    <TR><TD WIDTH="176" BGCOLOR="#DEE3E9" HEIGHT="26">Отдел ремонта техники</TD></TR>
+    <HR/>
+    <TR><TD WIDTH="176" HEIGHT="58"><B>Подтвердить<BR/>выдачу запчастей</B></TD></TR>
+    <HR/>
+    <TR><TD WIDTH="176" BGCOLOR="white" HEIGHT="26">Склад запчастей</TD></TR>
+    </TABLE>
+    >];
+    finish [shape=circle, label="", width=0.29, fixedsize=true, penwidth=3];
+    start:e -> request:w;
+    request:e -> confirmation:w;
+    confirmation:e -> finish:w;
+}
+@enddot
