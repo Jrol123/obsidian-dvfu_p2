@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0ddkqgr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:collaboration id="Collaboration_06ftemy">
+    <bpmn:participant id="Participant_0nu1w1b" name="Отдел ремонта техники" />
+    <bpmn:participant id="Participant_0uttwqf" name="Склад запчастей" />
+    <bpmn:messageFlow id="Flow_1s79gee" name="Заявка на запчасти" sourceRef="Participant_0nu1w1b" targetRef="Participant_0uttwqf" />
+    <bpmn:messageFlow id="Flow_13ueoog" name="Подтверждение выдачи" sourceRef="Participant_0uttwqf" targetRef="Participant_0nu1w1b" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_06ftemy">
+      <bpmndi:BPMNShape id="Participant_03fs0dg_di" bpmnElement="Participant_0nu1w1b" isHorizontal="true">
+        <dc:Bounds x="300" y="130" width="770" height="90" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_10dasa4_di" bpmnElement="Participant_0uttwqf" isHorizontal="true">
+        <dc:Bounds x="300" y="480" width="770" height="90" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1s79gee_di" bpmnElement="Flow_1s79gee">
+        <di:waypoint x="386" y="220" />
+        <di:waypoint x="386" y="480" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="425" y="338" width="49" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13ueoog_di" bpmnElement="Flow_13ueoog">
+        <di:waypoint x="969" y="480" />
+        <di:waypoint x="969" y="220" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="849" y="338" width="81" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

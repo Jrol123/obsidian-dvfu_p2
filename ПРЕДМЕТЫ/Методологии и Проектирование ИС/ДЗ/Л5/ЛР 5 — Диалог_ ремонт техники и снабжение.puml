@@ -1,0 +1,12 @@
+@startdot Dialog
+digraph Dialog {
+    graph [rankdir=LR, bgcolor="white", pad=0.25, ranksep=0.60];
+    node [fontname="Arial", fontsize=13, color="#374151", fontcolor="#17212B", penwidth=1.25, style=filled, fillcolor="white"];
+    edge [dir=none, color="#374151:white:#374151", penwidth=1];
+    repair [shape=box, width=1.75, height=1.05, label="Отдел ремонта\nтехники"];
+    supply [shape=hexagon, width=2.75, height=0.85, label="Запрос и подтверждение\nвыдачи запчастей"];
+    warehouse [shape=box, width=1.75, height=1.05, label="Склад запчастей"];
+    repair:e -> supply:w;
+    supply:e -> warehouse:w;
+}
+@enddot

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0ddkqgr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_1o3dl9f">
+    <bpmn:startEvent id="Event_0b0mrq2" name="Потребность в запчастях">
+      <bpmn:outgoing>Flow_1duogpg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1t9ukny" name="Передать заявку на запчасти">
+      <bpmn:incoming>Flow_1duogpg</bpmn:incoming>
+      <bpmn:outgoing>Flow_062wzkr</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1duogpg" sourceRef="Event_0b0mrq2" targetRef="Activity_1t9ukny" />
+    <bpmn:task id="Activity_1jzkmq2" name="Подтвердить выдачу запчастей">
+      <bpmn:incoming>Flow_062wzkr</bpmn:incoming>
+      <bpmn:outgoing>Flow_08wyoo0</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_062wzkr" sourceRef="Activity_1t9ukny" targetRef="Activity_1jzkmq2" />
+    <bpmn:endEvent id="Event_1ykehxx" name="Выдача подтверждена">
+      <bpmn:incoming>Flow_08wyoo0</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_08wyoo0" sourceRef="Activity_1jzkmq2" targetRef="Event_1ykehxx" />
+    <bpmn:textAnnotation id="TextAnnotation_043xtpz">
+      <bpmn:text>Инициатор: Отдел ремонта техники
+Получатель: Склад запчастей</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0p27mqg" associationDirection="None" sourceRef="Activity_1t9ukny" targetRef="TextAnnotation_043xtpz" />
+    <bpmn:textAnnotation id="TextAnnotation_1kpb03t">
+      <bpmn:text>Инициатор: Склад запчастей
+Получатель: Отдел ремонта техники</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1oyibnt" associationDirection="None" sourceRef="Activity_1jzkmq2" targetRef="TextAnnotation_1kpb03t" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1o3dl9f">
+      <bpmndi:BPMNShape id="Event_0b0mrq2_di" bpmnElement="Event_0b0mrq2">
+        <dc:Bounds x="642" y="332" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="624" y="375" width="73" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1t9ukny_di" bpmnElement="Activity_1t9ukny">
+        <dc:Bounds x="730" y="310" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jzkmq2_di" bpmnElement="Activity_1jzkmq2">
+        <dc:Bounds x="990" y="310" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ykehxx_di" bpmnElement="Event_1ykehxx">
+        <dc:Bounds x="1152" y="332" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1134" y="375" width="73" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_043xtpz_di" bpmnElement="TextAnnotation_043xtpz">
+        <dc:Bounds x="680" y="450" width="200" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1kpb03t_di" bpmnElement="TextAnnotation_1kpb03t">
+        <dc:Bounds x="940" y="450" width="200" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1duogpg_di" bpmnElement="Flow_1duogpg">
+        <di:waypoint x="678" y="350" />
+        <di:waypoint x="730" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_062wzkr_di" bpmnElement="Flow_062wzkr">
+        <di:waypoint x="830" y="350" />
+        <di:waypoint x="990" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08wyoo0_di" bpmnElement="Flow_08wyoo0">
+        <di:waypoint x="1090" y="350" />
+        <di:waypoint x="1152" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0p27mqg_di" bpmnElement="Association_0p27mqg">
+        <di:waypoint x="797" y="390" />
+        <di:waypoint x="823" y="450" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1oyibnt_di" bpmnElement="Association_1oyibnt">
+        <di:waypoint x="1023" y="390" />
+        <di:waypoint x="997" y="450" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
