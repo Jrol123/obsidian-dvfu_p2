@@ -1,0 +1,10 @@
+{
+  "showRibbon": false,
+  "accentColor": "",
+  "theme": "obsidian",
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "middle"
+  ]
+}
