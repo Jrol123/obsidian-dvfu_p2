@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "4bd2a38bfac42a63",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e47d9376328cfdf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b73da6550d3d055f",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "UTILITY/Tasks.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Tasks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ffcebf2ea74c5f9e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "578dc09ebbc36ede",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Файловый менеджер"
+        }
+      },
+      {
+        "id": "155738be2cb4f8a5",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Поиск"
+        }
+      },
+      {
+        "id": "be0e24ee97145866",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Теги"
+        }
+      },
+      {
+        "id": "e3a0ef36e456379d",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-bookmark",
+          "title": "Закладки"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "cc34c5f7adfc01a3",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "2f934561b8fe20c8",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "UTILITY/Tasks.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Обратные ссылки"
+        }
+      },
+      {
+        "id": "411d57602161daa6",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "UTILITY/Tasks.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Исходящие ссылки"
+        }
+      },
+      {
+        "id": "ce22ec57e35b3c2c",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "UTILITY/Tasks.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Структура"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false,
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Создать новый чертеж": false,
+      "obsidian-local-images-plus:Local Images Plus  0.19.2\r\nLocalize attachments (plugin folder)": false,
+      "obsidian-kanban:Создать новую доску": false,
+      "iconic:Открыть свод правил": false
+    }
+  },
+  "active": "b73da6550d3d055f",
+  "lastOpenFiles": []
+}
