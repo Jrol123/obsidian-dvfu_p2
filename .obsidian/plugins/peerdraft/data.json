@@ -1,0 +1,24 @@
+{
+  "basePath": "https://www.peerdraft.app",
+  "subscriptionAPI": "https://www.peerdraft.app/subscription",
+  "connectAPI": "https://www.peerdraft.app/subscription/connect",
+  "sessionAPI": "https://www.peerdraft.app/session",
+  "sync": "wss://www.peerdraft.app/sync",
+  "signaling": "wss://www.peerdraft.app/signal",
+  "actives": "wss://www.peerdraft.app/actives",
+  "name": "Anonim",
+  "root": "peerdraft_shared",
+  "plan": {
+    "type": "Free",
+    "email": "angap4@gmail.com"
+  },
+  "duration": 0,
+  "debug": false,
+  "version": "2.25.1",
+  "serverShares": {
+    "files": [],
+    "folders": []
+  },
+  "oid": "5339d6400c66b50d",
+  "oidVaultPath": "C:\\GitHub\\obsidian-dvfu_p2"
+}
