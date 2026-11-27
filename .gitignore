@@ -16,3 +16,9 @@ conflict-files-obsidian-git.md
 /ПРЕДМЕТЫ/Автоматизированные Производственные Системы/Литра
 .obsidian/types.json
 .obsidian/types.zip
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
