@@ -1,0 +1,16 @@
+{
+  "styles": {
+    "ПРЕДМЕТЫ/Английский": {
+      "backgroundColor": "#4754ff",
+      "textColor": "#ffffff",
+      "applyToSubfolders": true,
+      "applyToFiles": true
+    },
+    "UTILITY/Tasks.md": {
+      "backgroundColor": "#af9150",
+      "textColor": "#ffffff"
+    }
+  },
+  "presets": {},
+  "presetOrder": []
+}
